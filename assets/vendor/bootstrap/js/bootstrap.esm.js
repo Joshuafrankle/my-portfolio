@@ -1,8 +1,3 @@
-/*!
-  * Bootstrap v5.0.0-beta1 (https://getbootstrap.com/)
-  * Copyright 2011-2020 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
-  */
 import * as Popper from '@popperjs/core';
 import { createPopper } from '@popperjs/core';
 
@@ -111,8 +106,8 @@ var getTransitionDurationFromElement = function getTransitionDurationFromElement
 
 
   var _window$getComputedSt = window.getComputedStyle(element),
-      transitionDuration = _window$getComputedSt.transitionDuration,
-      transitionDelay = _window$getComputedSt.transitionDelay;
+    transitionDuration = _window$getComputedSt.transitionDuration,
+    transitionDelay = _window$getComputedSt.transitionDelay;
 
   var floatTransitionDuration = Number.parseFloat(transitionDuration);
   var floatTransitionDelay = Number.parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
@@ -203,7 +198,7 @@ var findShadowRoot = function findShadowRoot(element) {
 };
 
 var noop = function noop() {
-  return function () {};
+  return function () { };
 };
 
 var reflow = function reflow(element) {
@@ -212,7 +207,7 @@ var reflow = function reflow(element) {
 
 var getjQuery = function getjQuery() {
   var _window = window,
-      jQuery = _window.jQuery;
+    jQuery = _window.jQuery;
 
   if (jQuery && !document.body.hasAttribute('data-bs-no-jquery')) {
     return jQuery;
@@ -422,9 +417,9 @@ function addHandler(element, originalTypeEvent, handler, delegationFn, oneOff) {
   }
 
   var _normalizeParams = normalizeParams(originalTypeEvent, handler, delegationFn),
-      delegation = _normalizeParams[0],
-      originalHandler = _normalizeParams[1],
-      typeEvent = _normalizeParams[2];
+    delegation = _normalizeParams[0],
+    originalHandler = _normalizeParams[1],
+    typeEvent = _normalizeParams[2];
 
   var events = getEvent(element);
   var handlers = events[typeEvent] || (events[typeEvent] = {});
@@ -479,9 +474,9 @@ var EventHandler = {
     }
 
     var _normalizeParams2 = normalizeParams(originalTypeEvent, handler, delegationFn),
-        delegation = _normalizeParams2[0],
-        originalHandler = _normalizeParams2[1],
-        typeEvent = _normalizeParams2[2];
+      delegation = _normalizeParams2[0],
+      originalHandler = _normalizeParams2[1],
+      typeEvent = _normalizeParams2[2];
 
     var inNamespace = typeEvent !== originalTypeEvent;
     var events = getEvent(element);
@@ -597,8 +592,8 @@ var BaseComponent = /*#__PURE__*/function () {
     Data.removeData(this._element, this.constructor.DATA_KEY);
     this._element = null;
   }
-  /** Static */
-  ;
+    /** Static */
+    ;
 
   BaseComponent.getInstance = function getInstance(element) {
     return Data.getData(element, this.DATA_KEY);
@@ -658,7 +653,7 @@ var Alert = /*#__PURE__*/function (_BaseComponent) {
 
     this._removeElement(rootElement);
   } // Private
-  ;
+    ;
 
   _proto._getRootElement = function _getRootElement(element) {
     return getElementFromSelector(element) || element.closest("." + CLASSNAME_ALERT);
@@ -693,7 +688,7 @@ var Alert = /*#__PURE__*/function (_BaseComponent) {
 
     EventHandler.trigger(element, EVENT_CLOSED);
   } // Static
-  ;
+    ;
 
   Alert.jQueryInterface = function jQueryInterface(config) {
     return this.each(function () {
@@ -793,7 +788,7 @@ var Button = /*#__PURE__*/function (_BaseComponent) {
     // Toggle class and sync the `aria-pressed` attribute with the return value of the `.toggle()` method
     this._element.setAttribute('aria-pressed', this._element.classList.toggle(CLASS_NAME_ACTIVE));
   } // Static
-  ;
+    ;
 
   Button.jQueryInterface = function jQueryInterface(config) {
     return this.each(function () {
@@ -1211,7 +1206,7 @@ var Carousel = /*#__PURE__*/function (_BaseComponent) {
     this._activeElement = null;
     this._indicatorsElement = null;
   } // Private
-  ;
+    ;
 
   _proto._getConfig = function _getConfig(config) {
     config = _extends({}, Default, config);
@@ -1513,7 +1508,7 @@ var Carousel = /*#__PURE__*/function (_BaseComponent) {
       this.cycle();
     }
   } // Static
-  ;
+    ;
 
   Carousel.carouselInterface = function carouselInterface(element, config) {
     var data = Data.getData(element, DATA_KEY$2);
@@ -1872,7 +1867,7 @@ var Collapse = /*#__PURE__*/function (_BaseComponent) {
     this._triggerArray = null;
     this._isTransitioning = null;
   } // Private
-  ;
+    ;
 
   _proto._getConfig = function _getConfig(config) {
     config = _extends({}, Default$1, config);
@@ -1925,7 +1920,7 @@ var Collapse = /*#__PURE__*/function (_BaseComponent) {
       elem.setAttribute('aria-expanded', isOpen);
     });
   } // Static
-  ;
+    ;
 
   Collapse.collapseInterface = function collapseInterface(element, config) {
     var data = Data.getData(element, DATA_KEY$3);
@@ -2234,7 +2229,7 @@ var Dropdown = /*#__PURE__*/function (_BaseComponent) {
       this._popper.update();
     }
   } // Private
-  ;
+    ;
 
   _proto._addEventListeners = function _addEventListeners() {
     var _this2 = this;
@@ -2303,7 +2298,7 @@ var Dropdown = /*#__PURE__*/function (_BaseComponent) {
 
     return _extends({}, popperConfig, this._config.popperConfig);
   } // Static
-  ;
+    ;
 
   Dropdown.dropdownInterface = function dropdownInterface(element, config) {
     var data = Data.getData(element, DATA_KEY$4);
@@ -2708,7 +2703,7 @@ var Modal = /*#__PURE__*/function (_BaseComponent) {
   _proto.handleUpdate = function handleUpdate() {
     this._adjustDialog();
   } // Private
-  ;
+    ;
 
   _proto._getConfig = function _getConfig(config) {
     config = _extends({}, Default$3, config);
@@ -2944,9 +2939,9 @@ var Modal = /*#__PURE__*/function (_BaseComponent) {
 
     this._element.focus();
   } // ----------------------------------------------------------------------
-  // the following methods are used to handle overflowing modals
-  // ----------------------------------------------------------------------
-  ;
+    // the following methods are used to handle overflowing modals
+    // ----------------------------------------------------------------------
+    ;
 
   _proto._adjustDialog = function _adjustDialog() {
     var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
@@ -3040,7 +3035,7 @@ var Modal = /*#__PURE__*/function (_BaseComponent) {
     document.body.removeChild(scrollDiv);
     return scrollbarWidth;
   } // Static
-  ;
+    ;
 
   Modal.jQueryInterface = function jQueryInterface(config, relatedTarget) {
     return this.each(function () {
@@ -3595,7 +3590,7 @@ var Tooltip = /*#__PURE__*/function (_BaseComponent) {
       this._popper.update();
     }
   } // Protected
-  ;
+    ;
 
   _proto.isWithContent = function isWithContent() {
     return Boolean(this.getTitle());
@@ -3673,7 +3668,7 @@ var Tooltip = /*#__PURE__*/function (_BaseComponent) {
 
     return attachment;
   } // Private
-  ;
+    ;
 
   _proto._getPopperConfig = function _getPopperConfig(attachment) {
     var _this4 = this;
@@ -3697,18 +3692,18 @@ var Tooltip = /*#__PURE__*/function (_BaseComponent) {
           rootBoundary: this.config.boundary
         }
       }, {
-        name: 'arrow',
-        options: {
-          element: "." + this.constructor.NAME + "-arrow"
-        }
-      }, {
-        name: 'onChange',
-        enabled: true,
-        phase: 'afterWrite',
-        fn: function fn(data) {
-          return _this4._handlePopperPlacementChange(data);
-        }
-      }],
+          name: 'arrow',
+          options: {
+            element: "." + this.constructor.NAME + "-arrow"
+          }
+        }, {
+          name: 'onChange',
+          enabled: true,
+          phase: 'afterWrite',
+          fn: function fn(data) {
+            return _this4._handlePopperPlacementChange(data);
+          }
+        }],
       onFirstUpdate: function onFirstUpdate(data) {
         if (data.options.placement !== data.placement) {
           _this4._handlePopperPlacementChange(data);
@@ -3946,7 +3941,7 @@ var Tooltip = /*#__PURE__*/function (_BaseComponent) {
 
     this._addAttachmentClass(this._getAttachment(state.placement));
   } // Static
-  ;
+    ;
 
   Tooltip.jQueryInterface = function jQueryInterface(config) {
     return this.each(function () {
@@ -4103,7 +4098,7 @@ var Popover = /*#__PURE__*/function (_Tooltip) {
     this.setElementContent(SelectorEngine.findOne(SELECTOR_CONTENT, tip), content);
     tip.classList.remove(CLASS_NAME_FADE$2, CLASS_NAME_SHOW$4);
   } // Private
-  ;
+    ;
 
   _proto._addAttachmentClass = function _addAttachmentClass(attachment) {
     this.getTipElement().classList.add(CLASS_PREFIX$1 + "-" + this.updateAttachment(attachment));
@@ -4125,7 +4120,7 @@ var Popover = /*#__PURE__*/function (_Tooltip) {
       });
     }
   } // Static
-  ;
+    ;
 
   Popover.jQueryInterface = function jQueryInterface(config) {
     return this.each(function () {
@@ -4326,7 +4321,7 @@ var ScrollSpy = /*#__PURE__*/function (_BaseComponent) {
     this._activeTarget = null;
     this._scrollHeight = null;
   } // Private
-  ;
+    ;
 
   _proto._getConfig = function _getConfig(config) {
     config = _extends({}, Default$6, typeof config === 'object' && config ? config : {});
@@ -4440,7 +4435,7 @@ var ScrollSpy = /*#__PURE__*/function (_BaseComponent) {
       return node.classList.remove(CLASS_NAME_ACTIVE$2);
     });
   } // Static
-  ;
+    ;
 
   ScrollSpy.jQueryInterface = function jQueryInterface(config) {
     return this.each(function () {
@@ -4605,7 +4600,7 @@ var Tab = /*#__PURE__*/function (_BaseComponent) {
       complete();
     }
   } // Private
-  ;
+    ;
 
   _proto._activate = function _activate(element, container, callback) {
     var _this2 = this;
@@ -4670,7 +4665,7 @@ var Tab = /*#__PURE__*/function (_BaseComponent) {
       callback();
     }
   } // Static
-  ;
+    ;
 
   Tab.jQueryInterface = function jQueryInterface(config) {
     return this.each(function () {
@@ -4872,7 +4867,7 @@ var Toast = /*#__PURE__*/function (_BaseComponent) {
 
     this._config = null;
   } // Private
-  ;
+    ;
 
   _proto._getConfig = function _getConfig(config) {
     config = _extends({}, Default$7, Manipulator.getDataAttributes(this._element), typeof config === 'object' && config ? config : {});
@@ -4892,7 +4887,7 @@ var Toast = /*#__PURE__*/function (_BaseComponent) {
     clearTimeout(this._timeout);
     this._timeout = null;
   } // Static
-  ;
+    ;
 
   Toast.jQueryInterface = function jQueryInterface(config) {
     return this.each(function () {
